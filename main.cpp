@@ -47,7 +47,7 @@ int main()
 		std::cin >> choice;
 		switch (choice)
 		{
-		case 1:
+		case 1: //edit
 			int index;
 			std::cout << "Enter the index of the student to edit: ";
 			std::cin >> index;
@@ -61,19 +61,18 @@ int main()
 				loader.writeStudentDataToJsonFile(students);
 				break;
 			}
-		case 2:
+		case 2: //add
 			interfaceStudents->addStudent();
 			loader.writeStudentDataToJsonFile(students);
 			break;
-		case 3:
+		case 3: //delete NOT WORK
 			std::cout << "Enter the index of the student to delete: ";
 			std::cin >> index;
 			interfaceStudents->deleteStudent(index);
 			loader.writeStudentDataToJsonFile(students);
 			break;
-		case 4:
+		case 4: //print is work
 			interfaceStudents->printStudents();
-			loader.writeStudentDataToJsonFile(students);
 			break;
 		case 5:
 			std::cout << "Exiting the program. Goodbye!" << std::endl;

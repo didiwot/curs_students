@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <nlohmann/json.hpp>
+#include <iostream>
 
 class Student {
     friend class jsonLoader;
@@ -26,15 +27,7 @@ public:
     Student(std::string fullName, std::string dateOfBirth, int enrollmentYear, std::string faculty, std::string department, std::string group, std::string studentID, std::string gender);
     
     void addGrades(std::vector<std::pair<std::string, int>> sessionGrades);
-
-
     
-
-
-    
-
-
-
 
     
 };

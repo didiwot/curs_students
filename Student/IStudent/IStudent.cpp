@@ -85,10 +85,12 @@ void IStudent::printStudents()
         std::cout << "Gender" << students[i].gender << std::endl;
 
         std::cout << "Grades:" << std::endl;
-        for (int j = 0; j < students.size(); j++)
+        for (int j = 0; j < students[i].grades.size(); j++)
         {
             for (auto grade : students[i].grades[j])
             std::cout << "Subject name: " << grade.first << "  Grade: " << grade.second << std::endl;
+            
         }
+        std::cout << std::endl << "--------------------------" << std::endl;
     }
 }
