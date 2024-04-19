@@ -1,23 +1,21 @@
 
-
 #pragma once
 
 #include "../Student/Student.h"
-#include <vector>
-#include <iostream>
 
 class IStudent {
-private:
-	std::vector<Student> students;
+protected:
+	virtual ~IStudent() = default;
 
 public:
-	IStudent(const std::vector<Student>& students) : students(students) {}
+	virtual Student addInfoOneStudent() = 0;
+	virtual void addInfo(int index, std::vector<Student> students) = 0;
+	virtual void editStudents(int index, std::vector<Student> students) = 0;
+	virtual void addStudent(std::vector<Student> students) = 0;
+	virtual void deleteStudent(int index, std::vector<Student> students) = 0;
+	virtual void showMenu() = 0;
+	virtual void printStudents(std::vector<Student> students) = 0;
 
-	void addInfo(int index);
-	void editStudents(int index);
-	void addStudent();
-	void deleteStudent(int index);
-	void showMenu();
-	void printStudents();
+	IStudent& operator=(const IStudent&) = delete;
 
 };

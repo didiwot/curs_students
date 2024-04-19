@@ -37,8 +37,8 @@ int main()
 	//loader.writeStudentDataToJsonFile(students); //записать в файл
 	students = loader.readStudentDataFromJsonFile(); //читать из файла
 
-	std::unique_ptr<IStudent> interfaceStudents{std::make_unique<IStudent>(students)};
-
+	//std::unique_ptr<IStudent> interfaceStudents{std::make_unique<IStudent>(students)};
+	IStudent* interfaceStudents = new Student();
 
 	int choice = 0;
 	do
