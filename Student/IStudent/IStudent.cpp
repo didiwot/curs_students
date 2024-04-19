@@ -8,7 +8,7 @@ void IStudent::addInfo(int index)
     std::vector<std::pair<std::string, int>> sessionGrades;
     std::string newNameSubjectOfStudy;
     int newGradeSubjectOfStudy;
-    int CountSessions;
+    int CountSessions; 
     int CountSubjectOfStudy;
     std::cout << "enter new full name" << std::endl;
     std::cin >> students[index].fullName;

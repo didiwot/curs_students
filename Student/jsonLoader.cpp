@@ -7,12 +7,13 @@
 #include <vector>
 #include <nlohmann/json.hpp>
 #include "./Student/Student.h"
+#include <string>
 
 using json = nlohmann::json;
 
 class jsonLoader : private Student {
 private:
-
+	std::string jsonFile = "database.json";
 
 public:
 	jsonLoader() {};
@@ -20,7 +21,7 @@ public:
 	void writeStudentDataToJsonFile(const std::vector<Student>& students) {
 		json j = students;
 
-		std::ofstream file("./database/database.json");
+		std::ofstream file(jsonFile);
 		if (file.is_open())
 		{
 			file << j.dump(4);
@@ -34,7 +35,7 @@ public:
 	std::vector<Student> readStudentDataFromJsonFile() {
 		std::vector<Student> students;
 
-		std::ifstream file("./database/database.json");
+		std::ifstream file(jsonFile);
 		if (file.is_open()) {
 			json j;
 			file >> j;

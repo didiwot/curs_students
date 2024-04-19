@@ -8,8 +8,8 @@
 using namespace std;
 
 int main()
-{/*
-	Student student1("John Doe", "01/01/2000", 2020, "Computer Science", "Software Engineering", "CS101", "123456", "Male");
+{
+	/*Student student1("John Doe", "01/01/2000", 2020, "Computer Science", "Software Engineering", "CS101", "123456", "Male");
 	std::vector<std::pair<std::string, int>> session1 = { {"Math", 90}, {"Physics", 85}, {"English", 88} };
 	Student student2("Peggy Nelson", "01/01/2000", 2020, "Computer Science", "Software Engineering", "CS101", "123456", "Male");
 	std::vector<std::pair<std::string, int>> session2 = { {"Math", 90}, {"Physics", 85}, {"English", 88} };
