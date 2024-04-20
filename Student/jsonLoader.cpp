@@ -13,7 +13,7 @@ using json = nlohmann::json;
 
 class jsonLoader : private Student {
 private:
-	std::string jsonFile = "database.json";
+	std::string jsonFile = "../../../database/database.json";
 
 public:
 	jsonLoader() {};

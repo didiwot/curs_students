@@ -3,7 +3,7 @@
 
 #include "./Student/Student/Student.h"
 #include "./Student/jsonLoader.cpp"
-#include "./Student/IStudent/IStudent.h"
+//#include "./Student/IStudent/IStudent.h"
 
 using namespace std;
 
@@ -38,16 +38,16 @@ int main()
 	students = loader.readStudentDataFromJsonFile(); //читать из файла
 
 	//std::unique_ptr<IStudent> interfaceStudents{std::make_unique<IStudent>(students)};
-	IStudent* interfaceStudents = new Student();
+	Student* interfaceStudents = new Student();
 
 	int choice = 0;
-	do
+	do 
 	{
 		interfaceStudents->showMenu();
 		std::cin >> choice;
 		switch (choice)
 		{
-		case 1: //edit
+		case 1: //edit 
 			int index;
 			std::cout << "Enter the index of the student to edit: ";
 			std::cin >> index;
@@ -57,22 +57,22 @@ int main()
 			}
 			else
 			{
-				interfaceStudents->editStudents(index);
+				interfaceStudents->editStudents(index, students);
 				loader.writeStudentDataToJsonFile(students);
 				break;
 			}
 		case 2: //add
-			interfaceStudents->addStudent();
+			interfaceStudents->addStudent(students);
 			loader.writeStudentDataToJsonFile(students);
 			break;
 		case 3: //delete NOT WORK
 			std::cout << "Enter the index of the student to delete: ";
 			std::cin >> index;
-			interfaceStudents->deleteStudent(index);
+			interfaceStudents->deleteStudent(index, students);
 			loader.writeStudentDataToJsonFile(students);
 			break;
 		case 4: //print is work
-			interfaceStudents->printStudents();
+			interfaceStudents->printStudents(students);
 			break;
 		case 5:
 			std::cout << "Exiting the program. Goodbye!" << std::endl;
@@ -84,7 +84,7 @@ int main()
 
 	} while (choice != 5);
 
-
+	delete interfaceStudents;
 
 	return 0;
 
