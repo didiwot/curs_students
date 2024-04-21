@@ -3,7 +3,6 @@
 
 #include "./Student/Student/Student.h"
 #include "./Student/jsonLoader.cpp"
-//#include "./Student/IStudent/IStudent.h"
 
 using namespace std;
 
@@ -61,17 +60,24 @@ int main()
 				loader.writeStudentDataToJsonFile(students);
 				break;
 			}
-		case 2: //add
+		case 2: //add work
 			interfaceStudents->addStudent(students);
 			loader.writeStudentDataToJsonFile(students);
 			break;
-		case 3: //delete NOT WORK
+		case 3: //delete work
 			std::cout << "Enter the index of the student to delete: ";
 			std::cin >> index;
-			interfaceStudents->deleteStudent(index, students);
-			loader.writeStudentDataToJsonFile(students);
-			break;
-		case 4: //print is work
+			if (index < 0 || index >= students.size()) {
+				std::cout << "Invalid index. Please enter a valid index." << std::endl;
+				break;
+			} 
+			else
+			{
+				interfaceStudents->deleteStudent(index, students);
+				loader.writeStudentDataToJsonFile(students);
+				break;
+			}
+		case 4: //print work
 			interfaceStudents->printStudents(students);
 			break;
 		case 5:

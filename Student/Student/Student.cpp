@@ -8,6 +8,15 @@ void Student::addGrades(std::vector<std::pair<std::string, int>> sessionGrades) 
     grades.push_back(sessionGrades);
 }
 
+bool Student::is_char(std::string s) {
+    for (int i = 0; i < s.length(); i++)
+    {
+        if(s[i] >= 'A' && s[i] <= 'Z' || s[i] >= 'a' && s[i] <= 'z'){ return true; }
+        else { return false; }
+    }
+ 
+}
+
 
 void Student::addInfo(int index, std::vector<Student> students)
 {
@@ -93,20 +102,20 @@ Student Student::addInfoOneStudent() {
     return student;
 }
 
-void Student::editStudents(int index, std::vector<Student> students) {
+void Student::editStudents(int index, std::vector<Student> &students) {
     addInfo(index, students);
     std::cout << "Edit Student complete!" << std::endl;
 
 }
 
-void Student::addStudent(std::vector<Student> students)
+void Student::addStudent(std::vector<Student> &students)
 {
     students.push_back(addInfoOneStudent());
     addInfo(students.size() - 1, students);
     std::cout << "add Student complete!" << std::endl;
 }
 
-void Student::deleteStudent(int index, std::vector<Student> students)
+void Student::deleteStudent(int index, std::vector<Student> &students)
 {
     students.erase(students.begin() + index);
     std::cout << "Delete Student complete!" << std::endl;
