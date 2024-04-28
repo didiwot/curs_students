@@ -40,7 +40,7 @@ public:
     void addGrades(std::vector<std::pair<std::string, int>> sessionGrades);
 
     bool dataOutTxt(std::vector<Student> students);
-    std::string dataInTxt();
+    std::string dataInTxt(); // можно добавить что-то типо path = "../../../database/" а потом просто path+currentPath
     
 
     

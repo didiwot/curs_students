@@ -1,0 +1,4 @@
+Name: John Doe
+Date of birthday: 01/01/2000
+Enrollment year: 2020
+V

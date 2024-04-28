@@ -102,8 +102,8 @@ int main()
 			ICrypto->Encrypt(interfaceStudents->dataInTxt());
 			break;
 
-		case 6://decrypt not work
-			//ICrypto->Decrypt();
+		case 6://decrypt work ???
+			ICrypto->Decrypt();
 			break;
 
 		case 7:

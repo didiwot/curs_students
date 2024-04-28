@@ -39,22 +39,47 @@ void Crypto::Encrypt(string text) {
 		return;
 	}
 	file << text;
-	cout << "Enctypt success";
+	cout << "Enctypt success \n";
+
+	file.close();
 }
 
 void Crypto::Decrypt() {
-	DWORD count = text.length("../../../database/crypt_database.txt");
-	ifstream inFile()
+
+
+	ifstream inFile("../../../database/crypt_database.txt");
+	if (!inFile.is_open()) {
+		cout << "Encrypt open file error";
+		return;
+	}
+
+	string text;
+	inFile.seekg(0, std::ios::end);
+	text.reserve(inFile.tellg());
+	inFile.seekg(0, std::ios::beg);
+
+	for (std::string str; std::getline(inFile, str);)
+	{
+		text += str + "\n";
+	}
+	inFile.close();
+
+
+
+	DWORD count = text.length();
 	ofstream outFile("../../../database/decrypt_database.txt");
 	if (!outFile.is_open()) {
 		cout << "Encrypt open file error";
 		return;
 	}
 
-	if (!CryptDecrypt(hSessionKey, 0, true, 0, (BYTE*)string1, &count1)) {
+	if (!CryptDecrypt(hSessionKey, 0, true, 0, (BYTE*)text.c_str(), &count)) {
 		cout << "Encrypt error " << GetLastError() << endl;
 		return;
 	}
 	outFile << text;
+
+	cout << "Enctypt success \n";
+	outFile.close();
 }
 

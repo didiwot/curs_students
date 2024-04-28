@@ -24,7 +24,7 @@ private:
 public:
 
 	void Encrypt(string text);
-	void Decrypt();
+	void Decrypt(); 
 
 
 	Crypto();

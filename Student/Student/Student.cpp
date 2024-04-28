@@ -178,7 +178,7 @@ bool Student::dataOutTxt(std::vector<Student> students) {
             for (auto grade : students[i].grades[j])
                 file << "Subject name: " << grade.first << "  Grade: " << grade.second << std::endl;
         }
-        file << std::endl << "--------------------------";
+        file << "--------------------------";
         file << std::endl;
         }
 
@@ -208,7 +208,7 @@ std::string Student::dataInTxt() {
     }
     else
     {
-        std::cout << "dataOutFile error" << std::endl;
+        std::cout << "dataInFile error" << std::endl;
         return "error";
     }
 
