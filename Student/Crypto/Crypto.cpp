@@ -24,3 +24,7 @@ Crypto::~Crypto()
 }
 
 
+void Crypto::Encrypt(string text) {
+
+}
+

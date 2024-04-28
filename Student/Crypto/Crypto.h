@@ -5,6 +5,7 @@
 #include <windows.h>
 #include <wincrypt.h>
 #include <stdio.h>
+#include <string>
 
 using namespace std;
 
@@ -21,7 +22,7 @@ private:
 	HCRYPTKEY hSessionKey;
 public:
 
-	void Encrypt();
+	void Encrypt(string text);
 	void Decrypt();
 
 

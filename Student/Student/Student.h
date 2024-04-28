@@ -40,6 +40,7 @@ public:
     void addGrades(std::vector<std::pair<std::string, int>> sessionGrades);
 
     bool dataInTxt(std::vector<Student> students);
+    std::string dataOutTxt();
     
 
     

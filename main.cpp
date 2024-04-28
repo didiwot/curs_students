@@ -34,6 +34,7 @@ int main()
 
 	vector<Student> students;
 	jsonLoader loader;
+	std::string textToEncrypt;
 
 
 	//loader.writeStudentDataToJsonFile(students); //записать в файл
@@ -44,7 +45,10 @@ int main()
 	
 
 	Student* interfaceStudents = new Student();
-	interfaceStudents->dataInTxt(students);
+
+	Crypto* ICrypto = new Crypto();
+	//interfaceStudents->dataInTxt(students); //work
+	//std::cout << interfaceStudents->dataOutTxt(); //work
 
 	int choice = 0;
 	do 
@@ -92,19 +96,15 @@ int main()
 			interfaceStudents->printStudents(students);
 			break;
 
-		case 5:
-			if (interfaceStudents->dataInTxt(students)) {
-				std::cout << "Data saved in txt file!" << std::endl;
-				break;
-			}
-			else 
-			{
-				std::cout << "Error saving data in txt file!" << std::endl;
-				break;
-			}
+		case 5://encrypt not work
+			//ICrypto->Encrypt();
+			break;
 
+		case 6://decrypt not work
+			//ICrypto->Decrypt();
+			break;
 
-		case 6:
+		case 7:
 			std::cout << "Exiting the program. Goodbye!" << std::endl;
 			break;
 
@@ -114,7 +114,7 @@ int main()
 			break;
 		}
 
-	} while (choice != 6);
+	} while (choice != 7);
 
 	delete interfaceStudents;
 

@@ -128,7 +128,8 @@ void Student::showMenu()
     std::cout << "2. Add Student" << std::endl;
     std::cout << "3. Delete Student" << std::endl;
     std::cout << "4. Print Students" << std::endl;
-    std::cout << "5.Convert data to txt" << std::endl;
+    std::cout << "5. Encrypt" << std::endl;
+	std::cout << "6. Decrypt" << std::endl;
     std::cout << "6. Exit" << std::endl;
 }
 
@@ -182,4 +183,33 @@ bool Student::dataInTxt(std::vector<Student> students) {
         }
 
     return true;
+}
+
+
+std::string Student::dataOutTxt() {
+    std::string text;
+
+    std::ifstream in("../../../database/database.txt");
+    
+
+    if (in.is_open())
+    {
+        in.seekg(0, std::ios::end);
+        text.reserve(in.tellg());
+
+        in.seekg(0, std::ios::beg);
+
+        for (std::string str; std::getline(in, str);)
+        {
+            text += str + "\n";
+        }
+
+        return text;
+    }
+    else
+    {
+        std::cout << "dataOutFile error" << std::endl;
+        return "error";
+    }
+
 }
