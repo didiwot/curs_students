@@ -3,6 +3,7 @@
 
 #include "./Student/Student/Student.h"
 #include "./Student/jsonLoader.cpp"
+#include "./Student/Crypto/Crypto.h"
 
 using namespace std;
 
@@ -33,11 +34,17 @@ int main()
 
 	vector<Student> students;
 	jsonLoader loader;
-	//loader.writeStudentDataToJsonFile(students); //записать в файл
-	students = loader.readStudentDataFromJsonFile(); //читать из файла
 
-	//std::unique_ptr<IStudent> interfaceStudents{std::make_unique<IStudent>(students)};
+
+	//loader.writeStudentDataToJsonFile(students); //записать в файл
+
+	// тут должна быть расшифровка (создается объект типо crupto, он вызывает rsa туда желательно передать строку )
+
+	students = loader.readStudentDataFromJsonFile(); //читать из файла
+	
+
 	Student* interfaceStudents = new Student();
+	interfaceStudents->dataInTxt(students);
 
 	int choice = 0;
 	do 
@@ -46,6 +53,7 @@ int main()
 		std::cin >> choice;
 		switch (choice)
 		{
+
 		case 1: //edit 
 			int index;
 			std::cout << "Enter the index of the student to edit: ";
@@ -60,10 +68,12 @@ int main()
 				loader.writeStudentDataToJsonFile(students);
 				break;
 			}
+
 		case 2: //add work
 			interfaceStudents->addStudent(students);
 			loader.writeStudentDataToJsonFile(students);
 			break;
+
 		case 3: //delete work
 			std::cout << "Enter the index of the student to delete: ";
 			std::cin >> index;
@@ -77,18 +87,34 @@ int main()
 				loader.writeStudentDataToJsonFile(students);
 				break;
 			}
+
 		case 4: //print work
 			interfaceStudents->printStudents(students);
 			break;
+
 		case 5:
+			if (interfaceStudents->dataInTxt(students)) {
+				std::cout << "Data saved in txt file!" << std::endl;
+				break;
+			}
+			else 
+			{
+				std::cout << "Error saving data in txt file!" << std::endl;
+				break;
+			}
+
+
+		case 6:
 			std::cout << "Exiting the program. Goodbye!" << std::endl;
 			break;
+
+
 		default:
 			std::cout << "Invalid choice. Please enter a valid choice." << std::endl;
 			break;
 		}
 
-	} while (choice != 5);
+	} while (choice != 6);
 
 	delete interfaceStudents;
 

@@ -128,7 +128,8 @@ void Student::showMenu()
     std::cout << "2. Add Student" << std::endl;
     std::cout << "3. Delete Student" << std::endl;
     std::cout << "4. Print Students" << std::endl;
-    std::cout << "5. Exit" << std::endl;
+    std::cout << "5.Convert data to txt" << std::endl;
+    std::cout << "6. Exit" << std::endl;
 }
 
 void Student::printStudents(std::vector<Student> students)
@@ -136,12 +137,12 @@ void Student::printStudents(std::vector<Student> students)
     for (int i = 0; i < students.size(); i++) {
         std::cout << "Name: " << students[i].fullName << std::endl;
         std::cout << "Date of birthday: " << students[i].dateOfBirth << std::endl;
-        std::cout << "Enrollment year" << students[i].enrollmentYear << std::endl;
-        std::cout << "Faculty" << students[i].faculty << std::endl;
-        std::cout << "Department" << students[i].department << std::endl;
-        std::cout << "Group" << students[i].group << std::endl;
-        std::cout << "StudentID" << students[i].studentID << std::endl;
-        std::cout << "Gender" << students[i].gender << std::endl;
+        std::cout << "Enrollment year: " << students[i].enrollmentYear << std::endl;
+        std::cout << "Faculty: " << students[i].faculty << std::endl;
+        std::cout << "Department: " << students[i].department << std::endl;
+        std::cout << "Group: " << students[i].group << std::endl;
+        std::cout << "StudentID: " << students[i].studentID << std::endl;
+        std::cout << "Gender: " << students[i].gender << std::endl;
 
         std::cout << "Grades:" << std::endl;
         for (int j = 0; j < students[i].grades.size(); j++)
@@ -152,4 +153,33 @@ void Student::printStudents(std::vector<Student> students)
         }
         std::cout << std::endl << "--------------------------" << std::endl;
     }
+}
+
+bool Student::dataInTxt(std::vector<Student> students) {
+    std::ofstream file("../../../database/database.txt");
+    if (!file.is_open()) {
+        std::cout << "Error opening file" << std::endl;
+        return false;
+    }
+
+    for (int i = 0; i < students.size(); i++) {
+        file << "Name: " << students[i].fullName << std::endl;
+        file << "Date of birthday: " << students[i].dateOfBirth << std::endl;
+        file << "Enrollment year: " << students[i].enrollmentYear << std::endl;
+        file << "Faculty: " << students[i].faculty << std::endl;
+        file << "Department: " << students[i].department << std::endl;
+        file << "Group: " << students[i].group << std::endl;
+        file << "StudentID: " << students[i].studentID << std::endl;
+        file << "Gender: " << students[i].gender << std::endl;
+
+        for (int j = 0; j < students[i].grades.size(); j++)
+        {
+            for (auto grade : students[i].grades[j])
+                file << "Subject name: " << grade.first << "  Grade: " << grade.second << std::endl;
+        }
+        file << std::endl << "--------------------------";
+        file << std::endl;
+        }
+
+    return true;
 }

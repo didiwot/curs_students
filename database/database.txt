@@ -1,0 +1,52 @@
+Name: John Doe
+Date of birthday: 01/01/2000
+Enrollment year: 2020
+Faculty: Computer Science
+Department: Software Engineering
+Group: CS101
+StudentID: 123456
+Gender: Male
+Subject name: Math  Grade: 90
+Subject name: Physics  Grade: 85
+Subject name: English  Grade: 88
+
+--------------------------
+Name: Peggy Nelson
+Date of birthday: 01/01/2000
+Enrollment year: 2020
+Faculty: Computer Science
+Department: Software Engineering
+Group: CS101
+StudentID: 123456
+Gender: Male
+Subject name: Math  Grade: 90
+Subject name: Physics  Grade: 85
+Subject name: English  Grade: 88
+
+--------------------------
+Name: Paula Washington
+Date of birthday: 01/01/2000
+Enrollment year: 2020
+Faculty: Computer Science
+Department: Software Engineering
+Group: CS101
+StudentID: 123456
+Gender: Male
+Subject name: Math  Grade: 90
+Subject name: Physics  Grade: 85
+Subject name: English  Grade: 88
+
+--------------------------
+Name: Rita Thomas
+Date of birthday: 01/01/2000
+Enrollment year: 2020
+Faculty: Computer Science
+Department: Software Engineering
+Group: CS101
+StudentID: 123456
+Gender: Male
+Subject name: Math  Grade: 90
+Subject name: Physics  Grade: 85
+Subject name: English  Grade: 88
+
+--------------------------

@@ -12,7 +12,7 @@ endif()
 project ("curs_students")
 
 # Add source to this project's executable.
-add_executable (curs_students "main.cpp"  "Student/Student/Student.cpp" "Student/Student/Student.h" "Student/jsonLoader.cpp"  "Student/IStudent/IStudent.h" )
+add_executable (curs_students "main.cpp"  "Student/Student/Student.cpp" "Student/Student/Student.h" "Student/jsonLoader.cpp"  "Student/Crypto/Crypto.cpp"  "Student/Crypto/Crypto.h")
 
 #Add include directories
 include(FetchContent)

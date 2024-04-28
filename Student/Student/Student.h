@@ -5,7 +5,7 @@
 #include <vector>
 #include <nlohmann/json.hpp>
 #include <iostream>
-#include "../IStudent/IStudent.h"
+#include <fstream>
 
 class Student{
     friend class jsonLoader;
@@ -38,6 +38,8 @@ public:
     void printStudents(std::vector<Student> students);
     
     void addGrades(std::vector<std::pair<std::string, int>> sessionGrades);
+
+    bool dataInTxt(std::vector<Student> students);
     
 
     
