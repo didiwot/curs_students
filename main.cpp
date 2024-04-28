@@ -47,8 +47,9 @@ int main()
 	Student* interfaceStudents = new Student();
 
 	Crypto* ICrypto = new Crypto();
-	//interfaceStudents->dataInTxt(students); //work
-	//std::cout << interfaceStudents->dataOutTxt(); //work
+
+	//std::cout << interfaceStudents->dataOutTxt(students); //work
+	//interfaceStudents->dataInTxt(); //work
 
 	int choice = 0;
 	do 
@@ -96,8 +97,9 @@ int main()
 			interfaceStudents->printStudents(students);
 			break;
 
-		case 5://encrypt not work
-			//ICrypto->Encrypt();
+		case 5://encrypt work ???
+			interfaceStudents->dataOutTxt(students);
+			ICrypto->Encrypt(interfaceStudents->dataInTxt());
 			break;
 
 		case 6://decrypt not work

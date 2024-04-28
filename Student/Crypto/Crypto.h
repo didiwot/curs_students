@@ -6,6 +6,7 @@
 #include <wincrypt.h>
 #include <stdio.h>
 #include <string>
+#include <fstream>
 
 using namespace std;
 

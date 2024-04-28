@@ -130,7 +130,7 @@ void Student::showMenu()
     std::cout << "4. Print Students" << std::endl;
     std::cout << "5. Encrypt" << std::endl;
 	std::cout << "6. Decrypt" << std::endl;
-    std::cout << "6. Exit" << std::endl;
+    std::cout << "7. Exit" << std::endl;
 }
 
 void Student::printStudents(std::vector<Student> students)
@@ -156,7 +156,7 @@ void Student::printStudents(std::vector<Student> students)
     }
 }
 
-bool Student::dataInTxt(std::vector<Student> students) {
+bool Student::dataOutTxt(std::vector<Student> students) {
     std::ofstream file("../../../database/database.txt");
     if (!file.is_open()) {
         std::cout << "Error opening file" << std::endl;
@@ -186,7 +186,7 @@ bool Student::dataInTxt(std::vector<Student> students) {
 }
 
 
-std::string Student::dataOutTxt() {
+std::string Student::dataInTxt() {
     std::string text;
 
     std::ifstream in("../../../database/database.txt");
