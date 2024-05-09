@@ -26,59 +26,59 @@
         "studentID": "123456"
     },
     {
-        "dateOfBirth": "01/01/2000",
+        "dateOfBirth": "05/10/1999",
         "department": "Software Engineering",
         "enrollmentYear": 2020,
-        "faculty": "Computer Science",
+        "faculty": "Information Security",
         "fullName": "Peggy Nelson",
         "gender": "Male",
         "grades": [
             [
                 [
                     "Math",
-                    90
+                    94
                 ],
                 [
                     "Physics",
-                    85
+                    46
                 ],
                 [
                     "English",
-                    88
+                    79
                 ]
             ]
         ],
-        "group": "CS101",
-        "studentID": "123456"
+        "group": "IS191",
+        "studentID": "152132"
     },
     {
-        "dateOfBirth": "01/01/2000",
+        "dateOfBirth": "05/05/1998",
         "department": "Software Engineering",
         "enrollmentYear": 2020,
-        "faculty": "Computer Science",
+        "faculty": "Information Security",
         "fullName": "Paula Washington",
-        "gender": "Male",
+        "gender": "Female",
         "grades": [
             [
                 [
                     "Math",
-                    90
+                    78
                 ],
                 [
                     "Physics",
-                    85
+                    97
                 ],
                 [
                     "English",
-                    88
+                    55
                 ]
             ]
         ],
-        "group": "CS101",
-        "studentID": "123456"
+        "group": "IS202",
+        "studentID": "533456"
     },
     {
-        "dateOfBirth": "01/01/2000",
+        "dateOfBirth": "06/10/2000",
         "department": "Software Engineering",
         "enrollmentYear": 2020,
         "faculty": "Computer Science",
@@ -88,11 +88,11 @@
             [
                 [
                     "Math",
-                    90
+                    59
                 ],
                 [
                     "Physics",
-                    85
+                    80
                 ],
                 [
                     "English",
@@ -101,6 +101,84 @@
             ]
         ],
         "group": "CS101",
+        "studentID": "295738"
+    },
+    {
+        "dateOfBirth": "28/05/2001",
+        "department": "Software Engineering",
+        "enrollmentYear": 2020,
+        "faculty": "Computer Science",
+        "fullName": "Kathy Baker",
+        "gender": "Male",
+        "grades": [
+            [
+                [
+                    "Math",
+                    72
+                ],
+                [
+                    "Physics",
+                    40
+                ],
+                [
+                    "English",
+                    74
+                ]
+            ]
+        ],
+        "group": "CS101",
+        "studentID": "877589"
+    },
+    {
+        "dateOfBirth": "01/01/2000",
+        "department": "Software Engineering",
+        "enrollmentYear": 2020,
+        "faculty": "Computer Science",
+        "fullName": "John Doe",
+        "gender": "Male",
+        "grades": [
+            [
+                [
+                    "Math",
+                    92
+                ],
+                [
+                    "Physics",
+                    84
+                ],
+                [
+                    "English",
+                    94
+                ]
+            ]
+        ],
+        "group": "CS202",
         "studentID": "123456"
+    },
+    {
+        "dateOfBirth": "05/10/1999",
+        "department": "Software Engineering",
+        "enrollmentYear": 2020,
+        "faculty": "Computer Science",
+        "fullName": "Peggy Nelson",
+        "gender": "Male",
+        "grades": [
+            [
+                [
+                    "Math",
+                    77
+                ],
+                [
+                    "Physics",
+                    40
+                ],
+                [
+                    "English",
+                    56
+                ]
+            ]
+        ],
+        "group": "CS101",
+        "studentID": "152132"
     }
 ]

@@ -25,10 +25,14 @@ void Student::addInfo(int index, std::vector<Student> students)
     int newGradeSubjectOfStudy;
     int CountSessions;
     int CountSubjectOfStudy;
+    std::string tmp;
 
-    std::cout << "enter new full name" << std::endl;
-    std::cin >> students[index].fullName;
-    std::cout << "enter new date if birthday, format dd/mm/yyyy" << std::endl;
+    std::cout << "enter new full name in format: Name; press ""Enter""; Surname" << std::endl;
+    std::cin >> tmp;
+    students[index].fullName = tmp;
+    std::cin >> tmp;
+    students[index].fullName += " " + tmp;
+    std::cout << "enter new date of birthday, format dd/mm/yyyy" << std::endl;
     std::cin >> students[index].dateOfBirth;
     std::cout << "enter new enrollment year" << std::endl;
     std::cin >> students[index].enrollmentYear;
@@ -66,9 +70,13 @@ Student Student::addInfoOneStudent() {
     int CountSessions;
     int CountSubjectOfStudy;
     Student student;
+    std::string tmp;
 
-    std::cout << "enter new full name" << std::endl;
-    std::cin >> student.fullName;
+    std::cout << "enter new full name in format: Name; press ""Enter""; Surname" << std::endl;
+    std::cin >> tmp;
+    student.fullName = tmp;
+    std::cin >> tmp;
+	student.fullName += " " + tmp;
     std::cout << "enter new date if birthday, format dd/mm/yyyy" << std::endl;
     std::cin >> student.dateOfBirth;
     std::cout << "enter new enrollment year" << std::endl;
@@ -111,7 +119,6 @@ void Student::editStudents(int index, std::vector<Student> &students) {
 void Student::addStudent(std::vector<Student> &students)
 {
     students.push_back(addInfoOneStudent());
-    addInfo(students.size() - 1, students);
     std::cout << "add Student complete!" << std::endl;
 }
 
@@ -164,21 +171,20 @@ bool Student::dataOutTxt(std::vector<Student> students) {
     }
 
     for (int i = 0; i < students.size(); i++) {
-        file << "Name: " << students[i].fullName << std::endl;
-        file << "Date of birthday: " << students[i].dateOfBirth << std::endl;
-        file << "Enrollment year: " << students[i].enrollmentYear << std::endl;
-        file << "Faculty: " << students[i].faculty << std::endl;
-        file << "Department: " << students[i].department << std::endl;
-        file << "Group: " << students[i].group << std::endl;
-        file << "StudentID: " << students[i].studentID << std::endl;
-        file << "Gender: " << students[i].gender << std::endl;
+        file << students[i].fullName << " ";
+        file << students[i].dateOfBirth << " ";
+        file << students[i].enrollmentYear << " ";
+        file << students[i].faculty << " ";
+        file << students[i].department << " ";
+        file << students[i].group << " ";
+        file << students[i].studentID << " ";
+        file << students[i].gender << " ";
 
         for (int j = 0; j < students[i].grades.size(); j++)
         {
             for (auto grade : students[i].grades[j])
-                file << "Subject name: " << grade.first << "  Grade: " << grade.second << std::endl;
+                file << "Subject name: " << grade.first << "  Grade: " << grade.second << " ";
         }
-        file << "--------------------------";
         file << std::endl;
         }
 
