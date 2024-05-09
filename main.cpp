@@ -9,7 +9,7 @@ using namespace std;
 
 int main()
 {
-	Student student1("John Doe", "01/01/2000", 2020, "Computer Science", "Software Engineering", "CS101", "123456", "Male");
+	/*Student student1("John Doe", "01/01/2000", 2020, "Computer Science", "Software Engineering", "CS101", "123456", "Male");
 	std::vector<std::pair<std::string, int>> session1 = { {"Math", 90}, {"Physics", 85}, {"English", 88} };
 	Student student2("Peggy Nelson", "05/10/1999", 2020, "Information Security", "Software Engineering", "IS191", "152132", "Male");
 	std::vector<std::pair<std::string, int>> session2 = { {"Math", 94}, {"Physics", 46}, {"English", 79} };
@@ -39,11 +39,11 @@ int main()
 	students.push_back(student4);
 	students.push_back(student5);
 	students.push_back(student6);
-	students.push_back(student7);
+	students.push_back(student7);*/
 
 
 
-	//vector<Student> students; //создание векторов студентов
+	vector<Student> students; //создание векторов студентов
 	std::string textToEncrypt; //текст для шифрования
 
 
